@@ -8,6 +8,10 @@ _____
 
 To run the local environment just run : 
 
-`docker-compose build && docker-compose up`
+- `composer install`
+
+- `mv env.example .env`
+
+- `docker-compose build && docker-compose up`
 
 And now you will be able to access the site by http://192.50.56.199:8000
