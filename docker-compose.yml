@@ -10,8 +10,25 @@ services:
     networks:
       laravel_docker:
         ipv4_address: 192.50.56.199
+    links:
+      - database
+    depends_on:
+      - database
 
-        networks:
+  database:
+    image: mysql:5.7
+    container_name: laravel-docker-database
+    ports:
+      - "33061:3306"
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: laravel
+    networks:
+      laravel_docker:
+        ipv4_address: 192.50.56.200
+
+networks:
   laravel_docker:
     driver: bridge
     ipam:
