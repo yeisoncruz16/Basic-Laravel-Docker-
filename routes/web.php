@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', function(){
+Route::get('/', function () {
     return json_encode([
-        "message" => "welcome"
+        'message' => 'welcome',
     ]);
 });
